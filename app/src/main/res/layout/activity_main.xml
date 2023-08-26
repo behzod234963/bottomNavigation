@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity"
     android:gravity="bottom"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <androidx.fragment.app.FragmentContainerView
@@ -22,7 +23,9 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         app:menu="@menu/menu_menu"
-        android:background="@color/white"
+        app:itemTextColor="@color/black"
+        app:itemIconTint="@color/black"
+        android:background="@drawable/bg_bottomnav"
         app:labelVisibilityMode="labeled"/>
 
 </LinearLayout>
