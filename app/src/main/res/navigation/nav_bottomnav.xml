@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_bottomnav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="uz.datatalim.bottomnavigation.fragments.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/expencesFragment2"
+        android:name="uz.datatalim.bottomnavigation.fragments.ExpencesFragment"
+        android:label="fragment_expences"
+        tools:layout="@layout/fragment_expences" />
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="uz.datatalim.bottomnavigation.fragments.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="uz.datatalim.bottomnavigation.fragments.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" />
+</navigation>
