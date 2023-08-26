@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "uz.datatalim.bottomnavigation"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "uz.datatalim.bottomnavigation"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -38,6 +38,7 @@ android {
 dependencies {
 
     val nav_version = "2.7.1"
+    //hjhjhj
     // Kotlin bottom Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
