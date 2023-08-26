@@ -14,19 +14,37 @@ import uz.datatalim.bottomnavigation.adapter.SearchAdapter
 import uz.datatalim.bottomnavigation.model.SearchModel
 
 class HomeFragment : Fragment() {
+    lateinit var list:ArrayList<SearchModel>
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        val view= inflater.inflate(R.layout.fragment_home, container, false)
-        val etSearch:EditText=view.findViewById(R.id.etSearch)
-        etSearch.addTextChangedListener {
+        return inflater.inflate(R.layout.fragment_home, container, false)
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+        initView()
+
+    }
+
+    private fun initView() {
+
+        loadList()
+        val etSearch: EditText? =view?.findViewById(R.id.etSearch)
+        val adapter=SearchAdapter(list,requireContext())
+        etSearch?.addTextChangedListener {
+
+            adapter.filter?.filter(it)
 
         }
-        val rvSearch:RecyclerView=view.findViewById(R.id.rvSearchable)
-        val list:ArrayList<SearchModel> = ArrayList()
-        rvSearch.layoutManager=LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
-        rvSearch.adapter=SearchAdapter(list,requireContext())
+        val rvSearch: RecyclerView? =view?.findViewById(R.id.rvSearchable)
+        rvSearch?.layoutManager=LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
+        rvSearch?.adapter=SearchAdapter(list,requireContext())
+
+    }
+
+    private fun loadList() {
+
+        list= ArrayList()
         list.add(SearchModel(R.mipmap.ic_launcher,"Behzod","qalay"))
         list.add(SearchModel(R.mipmap.ic_launcher,"Zohir","qalay"))
         list.add(SearchModel(R.mipmap.ic_launcher,"Davron aka","qalay"))
@@ -41,7 +59,6 @@ class HomeFragment : Fragment() {
         list.add(SearchModel(R.mipmap.ic_launcher,"Azizbek","qalay"))
         list.add(SearchModel(R.mipmap.ic_launcher,"Alibek","qalay"))
         list.add(SearchModel(R.mipmap.ic_launcher,"Hasan","qalay"))
-        return view
 
     }
 
