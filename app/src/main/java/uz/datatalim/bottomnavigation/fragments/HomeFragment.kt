@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
         val adapter=SearchAdapter(list,requireContext())
         etSearch?.addTextChangedListener {
 
-            adapter.filter?.filter(it)
+            adapter.filter.filter(it)
 
         }
         val rvSearch: RecyclerView? =view?.findViewById(R.id.rvSearchable)
